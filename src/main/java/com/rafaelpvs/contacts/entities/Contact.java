@@ -1,14 +1,15 @@
 package com.rafaelpvs.contacts.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.rafaelpvs.contacts.entities.enums.Marker;
 
 @Entity
 @Table(name = "tb_contacts")
@@ -17,26 +18,27 @@ public class Contact implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	private String name;
 	private String cpf;
-	private Marker marker;
+	
+	@OneToMany(mappedBy = "contact")
+	private List<Phone> phones = new ArrayList<>();
 	
 	public Contact() {
 	}
 
-	public Contact(Integer id, String name, String cpf, Marker marker) {
+	public Contact(Long id, String name, String cpf) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
-		this.marker = marker;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -54,14 +56,6 @@ public class Contact implements Serializable{
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-
-	public Marker getMarker() {
-		return marker;
-	}
-
-	public void setMarker(Marker marker) {
-		this.marker = marker;
 	}
 
 	@Override
