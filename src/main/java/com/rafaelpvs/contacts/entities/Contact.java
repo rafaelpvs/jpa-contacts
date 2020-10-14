@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.rafaelpvs.contacts.entities.enums.Marker;
+
 @Entity
 @Table(name = "tb_contacts")
 public class Contact implements Serializable{
