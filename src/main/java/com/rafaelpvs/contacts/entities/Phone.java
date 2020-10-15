@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.rafaelpvs.contacts.entities.enums.Hierarchy;
 import com.rafaelpvs.contacts.entities.enums.Marker;
 
 @Entity
@@ -77,7 +78,7 @@ public class Phone implements Serializable{
 		this.number = number;
 	}
 	
-	public Marker getHierarchy() {
+	public Hierarchy getHierarchy() {
 		return Hierarchy.valueOf(hierarchy);
 	}
 
