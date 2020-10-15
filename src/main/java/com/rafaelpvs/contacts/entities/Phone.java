@@ -35,14 +35,14 @@ public class Phone implements Serializable{
 	public Phone() {
 	}
 
-	public Phone(Long id, String ddi, String ddd, String number, Integer hierarchy, Integer marker, Contact contact) {
+	public Phone(Long id, String ddi, String ddd, String number, Hierarchy hierarchy, Marker marker, Contact contact) {
 		super();
 		this.id = id;
 		this.ddi = ddi;
 		this.ddd = ddd;
 		this.number = number;
-		this.hierarchy = hierarchy;
-		this.marker = marker;
+		setHierarchy(hierarchy);
+		setMarker(marker);
 		this.contact = contact;
 	}
 
