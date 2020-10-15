@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "tb_contacts")
+@Table(name = "tb_contact")
 public class Contact implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
@@ -85,6 +85,7 @@ public class Contact implements Serializable{
 			return false;
 		return true;
 	}
+
 	
 	
 	
