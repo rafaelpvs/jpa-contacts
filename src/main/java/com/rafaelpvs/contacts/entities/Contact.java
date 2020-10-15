@@ -28,6 +28,10 @@ public class Contact implements Serializable{
 	@OneToMany(mappedBy = "contact")
 	private List<Phone> phones = new ArrayList<>();
 	
+	@JsonIgnore
+	@OneToMany(mappedBy = "contact")
+	private List<Email> email = new ArrayList<>();
+	
 	public Contact() {
 	}
 
@@ -59,6 +63,16 @@ public class Contact implements Serializable{
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	
+	
+	public List<Phone> getPhones() {
+		return phones;
+	}
+
+	public List<Email> getEmail() {
+		return email;
 	}
 
 	@Override
