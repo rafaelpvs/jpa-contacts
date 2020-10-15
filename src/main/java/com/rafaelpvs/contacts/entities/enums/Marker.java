@@ -1,8 +1,9 @@
 package com.rafaelpvs.contacts.entities.enums;
 
 public enum Marker {
-	PRIMARY(1),
-	SECUNDARY(2);
+	CELLPHONE(1),
+	RESIDENTIAL(2),
+	WORK(3);
 	
 	private int code;
 	

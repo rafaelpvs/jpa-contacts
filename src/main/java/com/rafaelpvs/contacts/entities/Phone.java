@@ -23,7 +23,7 @@ public class Phone implements Serializable{
 	private String ddi;
 	private String ddd;
 	private String number;
-	
+	private Integer hierarchy;
 	
 	private Integer marker;
 	
@@ -34,12 +34,13 @@ public class Phone implements Serializable{
 	public Phone() {
 	}
 
-	public Phone(Long id, String ddi, String ddd, String number, Integer marker, Contact contact) {
+	public Phone(Long id, String ddi, String ddd, String number, Integer hierarchy, Integer marker, Contact contact) {
 		super();
 		this.id = id;
 		this.ddi = ddi;
 		this.ddd = ddd;
 		this.number = number;
+		this.hierarchy = hierarchy;
 		this.marker = marker;
 		this.contact = contact;
 	}
@@ -75,7 +76,17 @@ public class Phone implements Serializable{
 	public void setNumber(String number) {
 		this.number = number;
 	}
+	
+	public Marker getHierarchy() {
+		return Hierarchy.valueOf(hierarchy);
+	}
 
+	public void setHierarchy(Hierarchy hierarchy) {
+		if(hierarchy != null) {
+			this.hierarchy = hierarchy.getCode();
+		}
+	}
+	
 	public Marker getMarker() {
 		return Marker.valueOf(marker);
 	}
