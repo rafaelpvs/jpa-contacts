@@ -22,7 +22,7 @@ public class Contact implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private String cpf;
+	private String sobre_nome;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "contact")
@@ -35,10 +35,10 @@ public class Contact implements Serializable{
 	public Contact() {
 	}
 
-	public Contact(Long id, String name, String cpf) {
+	public Contact(Long id, String name, String sobre_nome) {
 		this.id = id;
 		this.name = name;
-		this.cpf = cpf;
+		this.sobre_nome = sobre_nome;
 	}
 
 	public Long getId() {
@@ -57,12 +57,12 @@ public class Contact implements Serializable{
 		this.name = name;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getSobre_nome() {
+		return sobre_nome;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setSobre_nome(String sobre_nome) {
+		this.sobre_nome = sobre_nome;
 	}
 
 	
